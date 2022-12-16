@@ -70,22 +70,22 @@ keep.model.2 <- lm(keep.row$height ~ keep.row$whole_weight)
 summary(keep.model.2)
 
 #спрогнозировать (функция predict) значения во второй части
-predict1 <- predict(keep.model.1)
+predict1 <- predict(keep.model.1, newdata = delete.row)
 cor(keep.row$whole_weight, predict1)
 plot(keep.row$whole_weight, predict1)
 
-predict2 <- predict(keep.model.2)
+predict2 <- predict(keep.model.2, newdata = delete.row)
 cor(keep.row$whole_weight, predict2)
 plot(keep.row$whole_weight,predict2)
 
 #проверить качество прогноза
-total.predict.1 <- predict(keep.model.1, delete.row)
-cor(delete.row$whole_weight, total.predict.1)
-plot(delete.row$whole_weight, total.predict.1)
+#total.predict.1 <- predict(keep.model.1, delete.row)
+#cor(delete.row$whole_weight, total.predict.1)
+#plot(delete.row$whole_weight, total.predict.1)
 
-total.predict.2 <- predict(keep.model.2, delete.row)
-cor(delete.row$whole_weight, total.predict.2)
-plot(delete.row$whole_weight, total.predict.2)
+#total.predict.2 <- predict(keep.model.2, delete.row)
+#cor(delete.row$whole_weight, total.predict.2)
+#plot(delete.row$whole_weight, total.predict.2)
 
 
 
