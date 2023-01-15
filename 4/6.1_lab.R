@@ -1,5 +1,7 @@
 #Дисперсионный анализ. Пример "Типы диет"
 
+install.packages("gplots")
+library(gplots)
 #Загрузим данные (папку data "Set As A Working Directory")
 data = read.csv("data/diet.csv", row.names = 1)
 summary(data)
